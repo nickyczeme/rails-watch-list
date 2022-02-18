@@ -1,0 +1,16 @@
+.movie {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.movie-poster{
+  height: 240px;
+  margin-left: 10px;
+}
+
+.movie-detail {
+  list-style-type: none;
+  padding: 0px;
+  margin: auto 50px auto 10px;
+}

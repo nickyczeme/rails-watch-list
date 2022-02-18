@@ -17,18 +17,23 @@
   <% if @list.bookmarks.first %>
     <h3>Bookmarks</h3>
     <% @list.bookmarks.each do |bookmark| %>
-      <div class='bookmark-container'>
-        <p><strong>Comment:</strong> <em><%= bookmark.comment  %></em></p>
-        <ul><strong>Movie info</strong>
-          <li>Title: <%= bookmark.movie.title  %></li>
-          <li>Overview: <%= bookmark.movie.overview  %></li>
-          <li>Rating: <%= bookmark.movie.rating  %></li>
-        </ul>
-        <%= link_to bookmark_path(bookmark),  method: :delete, data: { confirm: "Are you sure?" } do %>
-         <div class="btn btn-flat">
-           Delete Bookmark
-         </div>
-        <% end %>
+      <div class='bookmark-container container d-flex mb-3 align-items-center'>
+        <%= image_tag bookmark.movie.poster_url, class:'movie-poster' %>
+        <div class='movie-container d-flex flex-column p-3'>
+          <div class='d-flex justify-content-between '>
+            <h3><%= bookmark.movie.title  %></h3>
+            <h3><i class="fa-solid fa-star"></i> <%= bookmark.movie.rating  %></h3>
+          </div>
+          <p><%= bookmark.movie.overview  %></p>
+          <div class='d-flex justify-content-between'>
+            <em><%= bookmark.comment  %></em>
+            <%= link_to bookmark_path(bookmark),  method: :delete, data: { confirm: "Are you sure?" } do %>
+            <div class="btn btn-flat">
+              Delete Bookmark
+            </div>
+            <% end %>
+          </div>
+        </div>
       </div>
     <% end %>
   <% else %>
