@@ -1,1 +1,20 @@
 // Specific CSS for your home-page
+body {
+  background-color: rgba(206, 206, 206, 0.726);
+}
+
+.bookmark-container {
+  // width: 70%;
+  margin: 10px auto;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 10px;
+
+}
+
+.container {
+  width: 90vw;
+  margin: auto;
+  padding: 10px
+}

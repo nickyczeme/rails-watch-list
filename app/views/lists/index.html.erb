@@ -1,0 +1,16 @@
+<%= render "components/banner" %>
+
+
+
+<p class="btn btn-flat" href="#"><%= link_to 'Create a movie list', new_list_path %></p>
+
+
+
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list) do %>
+        <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.image_url %>
+  )"><p class='list-name'><%= list.name %></p></div>
+      <% end %>
+    <% end %>
+  </div>
